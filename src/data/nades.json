@@ -1,0 +1,29 @@
+{
+    "maps": [{
+            "name": "dust2",
+            "nades": [{
+              "type": "smoke",
+              "title": "Smoke Xbox from T spawn",
+              "tick": 64,
+              "description": "Line up in corner at T spawn a straight line between the small pilon peaking off the corner (circled) and the intersection of the building on the left against the wall.",
+              "throwType": "jump",
+              "thumbnail": "../img/dust2/128/smoke/thumbnail/tSpawnXbox_02_land.jpg",
+              "image": "../img/dust2/128/smoke/tSpawnXbox_02_land.jpg",
+              "aimThumbnail": "../img/dust2/64/smoke/tSpawnXbox_01_positionAndAim.jpg",
+              "aimImage": "../img/dust2/64/smoke/thumbnail/tSpawnXbox_01_positionAndAim.jpg",
+              "positionThumbnail": null,
+              "positionImage": null,
+              "isAimPositionSame": true
+            }]
+        },
+        {
+            "name": "inferno"
+        },
+        {
+            "name": "mirage"
+        },
+        {
+            "name": "train"
+        }
+    ]
+}
