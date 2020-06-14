@@ -1,13 +1,14 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import data from '../data/nades.json'
+import data from '../data/nades.json';
+import * as constants from '../constants';
 
 class NadeTable extends Component {
 
     getNadesForMapName(mapName) {
         console.log(mapName);
-        return data.maps.find(item => item.name === mapName); 
+        return data.mapData.find(item => item.name === mapName);
     }
 
     render() {
@@ -28,27 +29,29 @@ class NadeTable extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th>
-                                {mapDetails.title}<br />
-                                <a target="_blank" href={mapDetails.nades[0].image}>
-                                    <img src={mapDetails.nades[0].thumbnail} />
-                                </a>
-                            </th>
-                            <td colSpan="2">
-                                <a target="_blank" href={mapDetails.nades[0].aimImage}>
-                                    <img src={mapDetails.nades[0].aimThumbnail} />
-                                </a><br />
-		{mapDetails.nades[0].description}
-	</td>
-                            <td colSpan="2">
-                                {/* <a target="_blank" href="img/dust2/128/smoke/tSpawnXbox_01_positionAndAim.jpg">
-                                    <img src="img/dust2/128/smoke/thumbnail/tSpawnXbox_01_positionAndAim.jpg" />
-                                </a><br />
-		Line up in corner at T spawn a straight line between the small pilon peaking off the corner (circled) and the top of the small room on the roof to the right. */}
-	</td>
-                            {/* <td>Jump</td> */}
-                        </tr>
+                        {mapDetails.nades.map((nade, index) => 
+                            <tr key={index}>
+                                <th>
+                                    {nade.title}<br />
+                                    <a target="_blank" href={nade.image}>
+                                        <img src={nade.ticks[0].thumbnail} />
+                                    </a>
+                                </th>
+                                <td colSpan="2">
+                                    <a target="_blank" href={nade.aimImage}>
+                                        <img src={nade.aimThumbnail} />
+                                    </a><br />
+                                    {nade.description}
+                                </td>
+                                <td colSpan="2">
+                                    {/* <a target="_blank" href="img/dust2/128/smoke/tSpawnXbox_01_positionAndAim.jpg">
+                                                        <img src="img/dust2/128/smoke/thumbnail/tSpawnXbox_01_positionAndAim.jpg" />
+                                                    </a><br />
+                            Line up in corner at T spawn a straight line between the small pilon peaking off the corner (circled) and the top of the small room on the roof to the right. */}
+                                </td>
+                                {/* <td>Jump</td> */}
+                            </tr>
+                        )}
                     </tbody>
                 </table>
             </div>
